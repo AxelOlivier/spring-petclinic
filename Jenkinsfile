@@ -5,7 +5,7 @@ pipeline {
       parallel {
         stage('error') {
           steps {
-            sh './mvnw package'
+            sh './mvnw clean package'
           }
         }
 
