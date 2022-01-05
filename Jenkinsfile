@@ -26,7 +26,7 @@ pipeline {
 
         stage('Nexus') {
           steps {
-            sh './mvnw clean deploy'
+            sh './mvnw clean deploy -DskipTests'
           }
         }
 
