@@ -24,6 +24,12 @@ pipeline {
           }
         }
 
+        stage('Nexus') {
+          steps {
+            sh './mvnw clean deploy'
+          }
+        }
+
       }
     }
 
