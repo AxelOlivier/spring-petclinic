@@ -15,6 +15,15 @@ pipeline {
           }
         }
 
+        stage('Sonar') {
+          steps {
+            sh '''./mvnw clean verify sonar:sonar \\
+  -Dsonar.projectKey=Projet_SonarCube \\
+  -Dsonar.host.url=http://sonarqube:9000 \\
+  -Dsonar.login=ce7c48f319170b350652b34b031fce54666906fe'''
+          }
+        }
+
       }
     }
 
